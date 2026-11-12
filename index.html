@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090a09">
+  <meta name="description" content="Dexite.dev is in development. Our next chapter is taking shape.">
+  <title>We're on the way — Dexite.dev</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Oswald:wght@700&display=swap" rel="stylesheet">
+  <style>
+    @property --hole-radius {
+      syntax: "<length>";
+      inherits: false;
+      initial-value: 0px;
+    }
+    :root {
+      color-scheme: dark;
+      --ink: #090a09;
+      --lime: #deff00;
+      --paper: #f1f0e9;
+      --muted: #a8aaa0;
+      --rule: #393c34;
+      font-family: Manrope, Arial, sans-serif;
+      font-synthesis: none;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { min-width: 320px; min-height: 100%; background: var(--ink); }
+    body { min-width: 320px; min-height: 100vh; margin: 0; background: var(--ink); color: var(--paper); }
+    .site-intro { display: none; }
+    html.intro-playing .site-intro { position: fixed; z-index: 20; inset: 0; display: grid; place-items: center; overflow: hidden; pointer-events: auto; }
+    html.intro-playing .site-intro::before { position: absolute; z-index: 0; inset: 0; background: var(--ink); --hole-radius: 0px; -webkit-mask-image: radial-gradient(circle 220vmax at center, transparent 0, transparent max(0px, calc(var(--hole-radius) - 72px)), rgba(0, 0, 0, .06) max(0px, calc(var(--hole-radius) - 56px)), rgba(0, 0, 0, .2) max(0px, calc(var(--hole-radius) - 36px)), rgba(0, 0, 0, .55) max(0px, calc(var(--hole-radius) - 16px)), #000 var(--hole-radius)); mask-image: radial-gradient(circle 220vmax at center, transparent 0, transparent max(0px, calc(var(--hole-radius) - 72px)), rgba(0, 0, 0, .06) max(0px, calc(var(--hole-radius) - 56px)), rgba(0, 0, 0, .2) max(0px, calc(var(--hole-radius) - 36px)), rgba(0, 0, 0, .55) max(0px, calc(var(--hole-radius) - 16px)), #000 var(--hole-radius)); -webkit-mask-position: center; mask-position: center; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; filter: blur(10px); transform: scale(1.025); animation: circle-aperture 1000ms 780ms cubic-bezier(.2, 0, 0, 1) both; content: ""; }
+    .site-intro-wordmark { position: relative; z-index: 1; display: flex; align-items: baseline; color: var(--paper); font-size: clamp(48px, 9vw, 112px); font-weight: 800; letter-spacing: -.05em; line-height: 1; white-space: nowrap; }
+    .site-intro-name, .site-intro-domain { display: inline-block; }
+    .site-intro-domain { margin-left: -.09em; }
+    html.intro-playing .site-intro-name { animation: dexite-slide 520ms cubic-bezier(.2, 0, 0, 1) both; }
+    html.intro-playing .site-intro-domain { animation: domain-slide 400ms 280ms cubic-bezier(.2, 0, 0, 1) both; }
+    html.intro-playing .site-intro-wordmark { animation: wordmark-fade 180ms 780ms ease-out both; }
+    @keyframes circle-aperture { to { --hole-radius: 220vmax; } }
+    @keyframes dexite-slide {
+      0% { opacity: 0; transform: translateX(28px); }
+      18% { opacity: 1; transform: translateX(28px); }
+      58%, 100% { opacity: 1; transform: translateX(-18px); }
+    }
+    @keyframes domain-slide {
+      0%, 25% { opacity: 0; transform: translateX(-24px); }
+      75%, 100% { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes wordmark-fade { to { opacity: 0; } }
+    html.intro-playing .site-intro { animation: intro-fade 180ms 1780ms ease-out both; }
+    @keyframes intro-fade { to { opacity: 0; visibility: hidden; } }
+    .page { min-height: 100svh; display: grid; grid-template-rows: 112px minmax(660px, 1fr) 114px; }
+    .header { display: flex; align-items: flex-start; justify-content: space-between; padding: 20px 32px 16px; }
+    .brand { display: inline-flex; align-items: flex-start; color: var(--paper); font-size: 44px; font-weight: 800; letter-spacing: -.05em; line-height: 1.18; text-decoration: none; }
+    .brand sup { margin: 2px 0 0 3px; color: var(--lime); font-size: 11px; font-weight: 500; letter-spacing: 0; line-height: 1; }
+    .site-status { display: inline-flex; align-items: center; gap: 12px; margin-top: 13px; font-size: 10px; font-weight: 500; line-height: 20px; white-space: nowrap; }
+    .site-status::before { width: 8px; height: 8px; background: var(--lime); content: ""; }
+    .header-rule { position: absolute; top: 95px; right: 32px; left: 32px; height: 1px; background: var(--rule); }
+    .main { min-height: 0; display: grid; grid-template-columns: minmax(0, 1.698fr) minmax(0, 1fr); align-items: stretch; gap: 16px; padding: 0 32px 32px; }
+    .panel { min-width: 0; min-height: 0; interpolate-size: allow-keywords; transition: height 420ms cubic-bezier(.2, 0, 0, 1), min-height 420ms cubic-bezier(.2, 0, 0, 1); }
+    .coming { display: flex; flex-direction: column; overflow: hidden; padding: 25px 28px 6px; background: var(--lime); color: var(--ink); }
+    .panel-head { min-height: 35px; display: flex; align-items: flex-start; justify-content: space-between; border-bottom: 1px solid currentColor; }
+    .eyebrow { margin: 0; font-size: 14px; font-weight: 500; line-height: 20px; }
+    .panel-toggle { width: 44px; height: 44px; display: grid; flex: 0 0 auto; place-items: center; margin: -8px -9px 0 12px; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; cursor: pointer; }
+    .panel-toggle:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
+    .cross { display: block; font-size: 26px; font-weight: 400; line-height: 1; transform: rotate(0); transition: transform 320ms cubic-bezier(.2, 0, 0, 1); }
+    .panel.is-collapsed .cross { transform: rotate(45deg); }
+    .panel-content { min-height: 0; display: grid; flex: 1 1 auto; grid-template-rows: minmax(0, 1fr); opacity: 1; transition: grid-template-rows 420ms cubic-bezier(.2, 0, 0, 1), opacity 220ms ease; }
+    .panel-content-inner { min-height: 0; display: flex; flex-direction: column; overflow: hidden; }
+    .panel.is-collapsed { height: 70px; min-height: 70px; }
+    .panel.is-collapsed .panel-content { grid-template-rows: minmax(0, 0fr); opacity: 0; }
+    .coming-title { margin: 39px 0 0; font-family: Oswald, Impact, sans-serif; font-size: clamp(76px, 10.42vw, 150px); font-weight: 700; letter-spacing: 0; line-height: .9333; text-transform: uppercase; }
+    .coming-title span { display: block; }
+    .coming-foot { margin-top: auto; }
+    .intro { margin: 0 0 15px; font-size: 17px; font-weight: 500; line-height: 25px; }
+    .intro span { display: block; }
+    .panel-caption { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 28px; border-top: 1px solid currentColor; padding-top: 8px; font-size: 10px; font-weight: 500; line-height: 14px; }
+    .about { display: flex; flex-direction: column; overflow: hidden; padding: 25px 32px 34px; background: var(--paper); color: var(--ink); }
+    .about .panel-head { min-height: 35px; border-color: #cbcdc2; }
+    .about-title { margin: 21px 0 0 -3px; font-size: clamp(42px, 3.9vw, 56px); font-weight: 800; letter-spacing: -.04em; line-height: 1.02; }
+    .about-lead { margin: 25px 0 0; font-size: 21px; font-weight: 500; line-height: 30px; }
+    .about-copy { margin: 30px 0 0; font-size: 17px; font-weight: 400; line-height: 26px; }
+    .about-copy.muted { margin-top: 25px; color: #55574f; }
+    .mission { display: grid; grid-template-columns: 8px 1fr; gap: 10px; align-items: center; margin-top: auto; padding-top: 14px; border-top: 1px solid #cbcdc2; }
+    .mission::before { width: 8px; height: 52px; background: #2149ff; content: ""; }
+    .mission p { margin: 0; font-size: clamp(22px, 2.36vw, 34px); font-weight: 700; letter-spacing: -.03em; line-height: 1.03; }
+    .footer { display: flex; align-items: flex-start; justify-content: space-between; padding: 12px 42px 0 58px; }
+    .footer-copy p { margin: 0; font-size: 14px; font-weight: 500; line-height: 20px; }
+    .footer-copy .launch { color: var(--lime); }
+    .footer-copy .copyright { margin-top: 12px; color: var(--muted); }
+    .edition { display: flex; flex-direction: column; align-items: flex-start; color: var(--muted); }
+    .barcode { width: 182px; height: 38px; background: repeating-linear-gradient(90deg,
+      var(--paper) 0 2px, transparent 2px 4px,
+      var(--paper) 4px 8px, transparent 8px 10px,
+      var(--paper) 10px 11px, transparent 11px 14px,
+      var(--paper) 14px 16px, transparent 16px 19px,
+      var(--paper) 19px 20px, transparent 20px 23px,
+      var(--paper) 23px 28px, transparent 28px 31px,
+      var(--paper) 31px 33px, transparent 33px 36px); }
+    .edition span { margin-top: 6px; font-size: 10px; font-weight: 500; line-height: 14px; }
+    @media (max-width: 1050px) {
+      .page { grid-template-rows: 100px minmax(620px, auto) 104px; }
+      .header-rule { top: 83px; }
+      .main { grid-template-columns: 1fr; gap: 14px; padding: 0 24px 26px; }
+      .coming { min-height: 640px; }
+      .about { min-height: 620px; padding: 25px 28px 30px; }
+      .coming-title { font-size: clamp(96px, 13vw, 142px); }
+      .about-title { font-size: 54px; }
+      .about-lead { max-width: 570px; font-size: 20px; line-height: 29px; }
+      .about-copy { max-width: 620px; font-size: 16px; line-height: 25px; }
+      .mission p { font-size: clamp(24px, 4vw, 32px); }
+    }
+    @media (max-width: 720px) {
+      .page { min-height: 100svh; grid-template-rows: 88px auto 96px; }
+      .header { padding: 18px 22px 14px; }
+      .brand { font-size: 34px; }
+      .site-status { margin-top: 10px; gap: 8px; font-size: 9px; }
+      .header-rule { top: 77px; right: 22px; left: 22px; }
+      .main { grid-template-columns: 1fr; gap: 14px; padding: 0 22px 24px; }
+      .panel-head { min-height: 44px; }
+      .coming { min-height: max(560px, calc(100svh - 210px)); padding: 22px 22px 10px; }
+      .about { min-height: 620px; padding: 22px 22px 28px; }
+      .coming-title { margin-top: clamp(32px, 8vw, 46px); font-size: clamp(82px, 18vw, 130px); line-height: .94; }
+      .about-title { font-size: clamp(43px, 12vw, 52px); }
+      .about-lead { margin-top: 22px; font-size: 19px; line-height: 28px; }
+      .about-copy { margin-top: 24px; font-size: 15px; line-height: 24px; }
+      .about-copy.muted { margin-top: 20px; }
+      .mission { margin-top: 28px; }
+      .footer { min-height: 96px; padding: 12px 22px 20px; }
+      .barcode { width: 112px; height: 28px; }
+      .edition span { font-size: 9px; }
+      .footer-copy p { font-size: 11px; }
+      .footer-copy .copyright { margin-top: 8px; }
+    }
+    @media (max-width: 390px) {
+      .site-status { gap: 6px; font-size: 8px; }
+      .header { padding-inline: 16px; }
+      .header-rule { right: 16px; left: 16px; }
+      .main { padding-inline: 16px; }
+      .coming { min-height: 520px; padding-inline: 18px; }
+      .coming-title { font-size: 21vw; }
+      .eyebrow { font-size: 12px; }
+      .intro { font-size: 15px; line-height: 23px; }
+      .panel-caption { font-size: 9px; }
+      .about { min-height: 600px; padding-inline: 18px; }
+      .about-title { font-size: 43px; }
+      .about-lead { font-size: 18px; line-height: 27px; }
+      .mission p { font-size: 21px; }
+      .footer { padding-inline: 16px; }
+    }
+    @media (max-height: 620px) and (min-width: 721px) {
+      .page { grid-template-rows: 92px minmax(620px, auto) 92px; }
+      .header-rule { top: 79px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; }
+      .panel-content, .cross { transition-duration: .01ms !important; }
+      html.intro-playing .page,
+      html.intro-playing .site-intro,
+      html.intro-playing .site-intro::before { animation-duration: .01ms !important; animation-delay: 0ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="site-intro" id="site-intro" aria-hidden="true">
+    <div class="site-intro-wordmark"><span class="site-intro-name">dexite</span><span class="site-intro-domain">.dev</span></div>
+  </div>
+  <div class="page">
+    <header class="header">
+      <a class="brand" href="/" aria-label="Dexite.dev">dexite.dev<sup>™</sup></a>
+      <div class="site-status">SITE IN PROGRESS</div>
+      <div class="header-rule" aria-hidden="true"></div>
+    </header>
+    <main class="main">
+      <section class="panel coming" aria-labelledby="coming-label">
+        <div class="panel-head">
+          <p class="eyebrow" id="coming-label">01 / WEBSITE UNDER CONSTRUCTION</p>
+          <span class="cross" aria-hidden="true">+</span>
+        </div>
+        <div class="panel-content">
+          <div class="panel-content-inner">
+            <h1 class="coming-title" id="coming-title"><span>We’re</span><span>on the</span><span>way.</span></h1>
+            <div class="coming-foot">
+              <p class="intro"><span>Our next chapter is taking shape.</span><span>A new home for businesses ready to be seen.</span></p>
+              <div class="panel-caption"><span>DEXITE.DEV / IN DEVELOPMENT</span><span>PLEASE STAND BY</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="panel about" aria-labelledby="about-label">
+        <div class="panel-head">
+          <p class="eyebrow" id="about-label">02 / ABOUT US</p>
+          <button class="panel-toggle" type="button" aria-expanded="true" aria-controls="about-content" aria-label="Collapse About Dexite panel"><span class="cross" aria-hidden="true">+</span></button>
+        </div>
+        <div class="panel-content" id="about-content">
+          <div class="panel-content-inner">
+            <h2 class="about-title" id="about-title">What’s a<br>dexite?</h2>
+            <p class="about-lead">We’re an independent web development studio based in Manila.</p>
+            <p class="about-copy">We believe good businesses deserve to be seen. And customers deserve a clear view of what those businesses have to offer.</p>
+            <p class="about-copy muted">That gap is where opportunities get lost. We build websites that bridge it, helping businesses connect with customers and turn interest into sales.</p>
+            <div class="mission"><p>LESS FRICTION.<br>MORE CONNECTION.</p></div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="footer-copy">
+        <p class="launch">FULL WEBSITE COMING SOON</p>
+        <p class="copyright">© DEXITE.DEV 2026</p>
+      </div>
+      <div class="edition" aria-label="Dexite edition 001, Manila">
+        <div class="barcode" aria-hidden="true"></div>
+        <span>DS—001 / MNL</span>
+      </div>
+    </footer>
+  </div>
+  <script>
+    (() => {
+      const intro = document.getElementById("site-intro");
+      const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+      if (!intro || reducedMotion.matches) return;
+      document.documentElement.classList.add("intro-playing");
+
+      let finished = false;
+      const finishIntro = () => {
+        if (finished) return;
+        finished = true;
+        document.documentElement.classList.remove("intro-playing");
+        intro.remove();
+        window.removeEventListener("keydown", onKeyDown);
+      };
+      const onKeyDown = (event) => { if (event.key === "Escape") finishIntro(); };
+      intro.addEventListener("click", finishIntro, { once: true });
+      window.addEventListener("keydown", onKeyDown);
+      window.setTimeout(finishIntro, 1980);
+    })();
+
+    document.querySelectorAll(".panel-toggle").forEach((button) => {
+      button.addEventListener("click", () => {
+        const panel = button.closest(".panel");
+        const content = document.getElementById(button.getAttribute("aria-controls"));
+        const isExpanded = button.getAttribute("aria-expanded") === "true";
+        panel.classList.toggle("is-collapsed", isExpanded);
+        button.setAttribute("aria-expanded", String(!isExpanded));
+        button.setAttribute("aria-label", `${isExpanded ? "Expand" : "Collapse"} About Dexite panel`);
+        content.setAttribute("aria-hidden", String(isExpanded));
+      });
+    });
+  </script>
+</body>
+</html>
