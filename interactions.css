@@ -1,11 +1,14 @@
 /* Dexite handbook: small, deliberate feedback; no layout shift. */
-.dex-action { --action-bg:#deff00; --action-fg:#090a09; --action-hover:#f1f0e9; position:relative; display:inline-flex; align-items:center; justify-content:space-between; gap:20px; min-height:44px; padding:12px 16px; border:1px solid transparent; border-radius:0; background:var(--action-bg); color:var(--action-fg); font-family:Manrope,Arial,sans-serif; font-size:13px; line-height:20px; font-weight:700; text-decoration:none; cursor:pointer; transition:background-color 160ms ease,color 160ms ease,border-color 160ms ease,box-shadow 140ms ease; -webkit-tap-highlight-color:transparent; }
+.dex-action { --action-bg:#deff00; --action-fg:#090a09; --action-hover:#f1f0e9; --action-shadow:#f1f0e9; position:relative; display:inline-flex; align-items:center; justify-content:space-between; gap:20px; min-height:44px; padding:12px 16px; border:1px solid transparent; border-radius:0; background:var(--action-bg); color:var(--action-fg); font-family:Manrope,Arial,sans-serif; font-size:13px; line-height:20px; font-weight:700; text-decoration:none; cursor:pointer; transition:background-color 160ms ease,color 160ms ease,border-color 160ms ease,box-shadow 140ms ease; -webkit-tap-highlight-color:transparent; }
 .dex-action .action-icon { width:20px; height:20px; flex:0 0 20px; transition:transform 160ms cubic-bezier(.2,0,0,1); }
-@media (hover:hover) { .dex-action:hover { background:var(--action-hover); } .dex-action:hover .action-icon { transform:translateX(3px); } }
+@media (hover:hover) { .dex-action:not(:disabled):hover { background:var(--action-hover); border-color:var(--action-shadow); box-shadow:4px 4px 0 var(--action-shadow); } .dex-action:hover .action-icon { transform:translateX(3px); } }
 .dex-action:active { background:#c4df00; box-shadow:inset 0 0 0 2px #090a09; }
 .dex-action:active .action-icon { transform:translateX(1px) scale(.9); }
 .dex-action:focus-visible { outline:2px solid #f1f0e9; outline-offset:4px; }
+.dex-action.on-paper { --action-shadow:#090a09; }
 .dex-action.on-paper:focus-visible { outline-color:#2149ff; }
 .dex-action:disabled { background:#d0d2c6; color:#55574f; cursor:not-allowed; box-shadow:none; }
 .dex-action:disabled .action-icon { transform:none; }
 @media(prefers-reduced-motion:reduce) { .dex-action,.dex-action .action-icon { transition:none; } .dex-action:hover .action-icon,.dex-action:active .action-icon { transform:none; } }
+
+.dex-action:not(:disabled):active { box-shadow:1px 1px 0 var(--action-shadow),inset 0 0 0 1px #090a09; }

@@ -10,8 +10,8 @@
   const context = canvas.getContext('2d');
   if (!context) { intro.remove(); return; }
   const page = document.querySelector('.page');
-  const HOLD = 880; // Original 780ms + the requested extra 100ms.
-  const DURATION = 650;
+  const HOLD = 616; // Entire intro shortened by 30%, including wordmark assembly.
+  const DURATION = 455;
   let width, height, frame, fallback, finished = false;
   function resize() {
     width = window.innerWidth; height = window.innerHeight;
@@ -98,6 +98,11 @@
       const body = card.querySelector('.card-body');
       body.inert = collapsed;
       body.setAttribute('aria-hidden', String(collapsed));
+      const companyProject = card.querySelector('.company-project');
+      if (companyProject) {
+        companyProject.inert = !open;
+        companyProject.setAttribute('aria-hidden', String(!open));
+      }
       const details = card.querySelector('.card-details');
       if (details) {
         details.inert = !open;
