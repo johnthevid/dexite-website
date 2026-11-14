@@ -12,6 +12,10 @@
 :root{color-scheme:dark;--ink:#090a09;--lime:#deff00;--paper:#f1f0e9;--rule:#393c34;font-family:Manrope,Arial,sans-serif;font-synthesis:none}*{box-sizing:border-box}body{margin:0;background:var(--ink);color:var(--paper);-webkit-font-smoothing:antialiased}a{color:inherit}.shell{max-width:1600px;margin:auto;padding:0 32px}header{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:104px;border-bottom:1px solid var(--rule)}.brand{font-size:44px;font-weight:800;letter-spacing:-.05em;line-height:1.18;text-decoration:none}.back{display:inline-flex;align-items:center;gap:10px;min-height:44px;text-decoration:none;font-size:13px}.back svg{transition:transform 160ms ease}.back:hover svg{transform:translateX(-3px)}a:focus-visible{outline:2px solid var(--paper);outline-offset:4px}.icon{display:block;width:20px;height:20px;flex-shrink:0}main{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:5%;padding:40px 0}.intro{padding:12px 0 20px;display:flex;flex-direction:column;align-items:flex-start;min-width:0}.intro h1{font-family:Oswald,Impact,sans-serif;font-size:clamp(68px,7.9vw,124px);line-height:.98;letter-spacing:-.025em;text-transform:uppercase;margin:0 0 30px;color:var(--lime)}h1 span{display:block}.lead{font-size:18px;line-height:1.65;max-width:350px;margin:0}.intro-bottom{margin-top:auto;padding-top:70px;width:100%;max-width:380px}.studio-note{padding:0 0 20px;border-bottom:1px solid var(--rule);font-size:13px;line-height:1.7;color:#a8aaa0}.direct-contact{display:inline-flex;align-items:center;gap:12px;min-height:44px;margin-top:12px;font-size:15px;text-underline-offset:5px;text-decoration-thickness:1px}.direct-contact svg{width:18px;height:18px}.form-panel{background:var(--paper);color:var(--ink);color-scheme:light;padding:32px;min-width:0}fieldset{border:0;padding:0;margin:0 0 30px;min-width:0}legend{display:flex;align-items:center;gap:14px;width:100%;padding:0 0 16px;margin-bottom:20px;border-bottom:1px solid #b8bbaf;font-size:17px;line-height:1.5;font-weight:800;letter-spacing:-.02em}.step{display:inline-grid;place-items:center;width:28px;height:28px;background:var(--ink);color:var(--paper);font-size:12px;letter-spacing:0;flex-shrink:0}.choices{display:grid;grid-template-columns:1fr 1fr;gap:10px}.choice{position:relative;display:block;cursor:pointer}.choice input{position:absolute;top:14px;right:14px;width:20px;height:20px;opacity:0;margin:0}.choice-content{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:64px;height:100%;border:1px solid #8b8e80;padding:14px;font-size:14px;line-height:1.5;font-weight:500;transition:background-color 160ms ease,border-color 160ms ease,box-shadow 160ms ease}.choice-content .check{width:18px;height:18px;flex:0 0 18px;border:1px solid #8b8e80;color:transparent}.check svg{width:16px;height:16px;display:block}.choice input:checked+.choice-content{background:var(--lime);border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink);font-weight:700}.choice input:checked+.choice-content .check{background:var(--ink);border-color:var(--ink);color:var(--lime)}.choice input:focus-visible+.choice-content{outline:2px solid #2149ff;outline-offset:3px}.choice:active .choice-content{box-shadow:inset 0 0 0 2px var(--ink)}@media(hover:hover){.choice:hover .choice-content{border-color:var(--ink);background:#e5e7d9}.choice:hover input:checked+.choice-content{background:var(--lime)}}.fields{display:grid;grid-template-columns:1fr 1fr;gap:20px 16px}.full{grid-column:1/-1}.field-label{display:block;font-size:13px;line-height:1.5;font-weight:700;margin-bottom:8px}.optional{font-weight:400;color:#55574f}.text-input,select,textarea{display:block;width:100%;min-width:0;min-height:48px;padding:12px;border:1px solid #85897a;border-radius:0;background:transparent;color:var(--ink);font:inherit;font-size:16px;line-height:1.5;transition:border-color 160ms ease,background-color 160ms ease}.text-input:hover,select:hover,textarea:hover{border-color:var(--ink)}.text-input:focus,select:focus,textarea:focus{border-color:var(--ink);background:#fff;outline:2px solid #2149ff;outline-offset:2px}input::placeholder,textarea::placeholder{color:#66695e}textarea{resize:vertical;min-height:135px}.helper{font-size:12px;line-height:1.6;color:#55574f;margin:0 0 12px}.submit{width:100%;min-height:56px;margin:0;--action-hover:#090a09}.submit:hover{color:var(--lime)}.submit:active{color:var(--ink);background:#c4df00}.note{font-size:12px;line-height:1.7;color:#55574f;margin:12px 0 0}.note a{color:var(--ink);text-underline-offset:3px}.note a:focus-visible{outline-color:#2149ff}#status{font-size:13px;line-height:1.7;border-left:3px solid var(--ink);padding-left:12px;margin:16px 0 0}#status:empty{display:none}footer{border-top:1px solid var(--rule);display:flex;justify-content:space-between;gap:16px;padding:22px 0 30px;font-size:11px;line-height:1.6;color:#a8aaa0}@media(max-width:1050px){main{gap:28px;grid-template-columns:minmax(0,4fr) minmax(0,6fr)}.form-panel{padding:26px}.intro h1{font-size:clamp(58px,8vw,85px)}.choices,.fields{grid-template-columns:1fr}.full{grid-column:auto}.choice-content{min-height:54px}.lead{font-size:16px}}@media(max-width:760px){.shell{padding:0 22px}header{min-height:88px}.brand{font-size:34px}.back{font-size:12px}main{grid-template-columns:1fr;gap:30px;padding:30px 0}.intro{padding:0}.intro h1{font-size:clamp(68px,13vw,96px);margin-bottom:22px}.intro h1 span{display:inline}.intro h1 span::after{content:' '}.lead{max-width:440px;font-size:17px}.intro-bottom{padding-top:20px;max-width:none;margin-top:0}.studio-note{display:none}.direct-contact{margin-top:0}.form-panel{padding:26px}.choices,.fields{grid-template-columns:1fr 1fr}.full{grid-column:1/-1}footer{font-size:10px}}@media(max-width:480px){.shell{padding:0 16px}.form-panel{padding:22px 18px}.choices,.fields{grid-template-columns:1fr}.full{grid-column:auto}.intro h1{font-size:18vw}.intro h1 span{display:block}.intro h1 span::after{content:none}.back{gap:6px;font-size:11px}.choice-content{min-height:56px}legend{font-size:16px}footer{flex-direction:column;gap:4px}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important}.back:hover svg{transform:none}}
 
 .timeline-field{border-top:1px solid #b8bbaf;padding-top:22px}.timeline-heading{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin:16px 0 10px}.timeline-heading output{font-size:26px;line-height:1.25;font-weight:800;letter-spacing:-.04em}.timeline-heading>span{font-size:12px;color:#55574f}.timeline-range{--range-fill:60%;display:block;width:100%;height:44px;margin:0;padding:0;border:0;background:transparent;cursor:pointer;appearance:none;-webkit-appearance:none;touch-action:pan-y}.timeline-range::-webkit-slider-runnable-track{height:6px;background:linear-gradient(to right,#090a09 0 var(--range-fill),#c8cbbd var(--range-fill) 100%)}.timeline-range::-moz-range-track{height:6px;background:linear-gradient(to right,#090a09 0 var(--range-fill),#c8cbbd var(--range-fill) 100%)}.timeline-range::-webkit-slider-thumb{appearance:none;-webkit-appearance:none;width:26px;height:26px;margin-top:-10px;border:2px solid #090a09;border-radius:0;background:#deff00;transition:box-shadow 160ms ease,background-color 160ms ease}.timeline-range::-moz-range-thumb{width:22px;height:22px;border:2px solid #090a09;border-radius:0;background:#deff00;transition:box-shadow 160ms ease,background-color 160ms ease}.timeline-range:hover::-webkit-slider-thumb{box-shadow:0 0 0 4px #090a0918}.timeline-range:hover::-moz-range-thumb{box-shadow:0 0 0 4px #090a0918}.timeline-range:active::-webkit-slider-thumb{background:#090a09;box-shadow:inset 0 0 0 3px #deff00}.timeline-range:active::-moz-range-thumb{background:#090a09;box-shadow:inset 0 0 0 3px #deff00}.timeline-range:focus-visible{outline:2px solid #2149ff;outline-offset:2px}.timeline-endpoints{display:flex;justify-content:space-between;font-size:12px;color:#55574f;margin-top:0}.timeline-description{min-height:48px;font-size:14px;line-height:1.7;margin:18px 0 6px}.timeline-field .helper{margin-bottom:0}@media(max-width:380px){.timeline-heading{align-items:flex-start;flex-direction:column;gap:5px}}
+[hidden]{display:none!important}.field-error{font-size:12px;line-height:1.6;color:#9d2424;margin:8px 0 0}.field-error:empty{display:none}[aria-invalid="true"]{border-color:#9d2424}.other-service{border-left:3px solid #2149ff;padding-left:16px;animation:field-enter 180ms ease-out}.other-service textarea{min-height:96px}@keyframes field-enter{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+/* A short arrival transition; navigation itself stays immediate. */
+@media (prefers-reduced-motion:no-preference){main{animation:inquiry-reveal 480ms cubic-bezier(.22,1,.36,1) both}}
+@keyframes inquiry-reveal{from{opacity:0;filter:blur(6px);transform:translateY(10px)}to{opacity:1;filter:blur(0);transform:translateY(0)}}
 </style>
 </head>
 <body><div class="shell">
@@ -24,16 +28,17 @@
 <label class="choice"><input type="radio" name="service" value="A new website" required><span class="choice-content"><span>A new website</span><span class="check" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" focusable="false"><path d="m4 10 4 4 8-8"/></svg></span></span></label>
 <label class="choice"><input type="radio" name="service" value="A website redesign" required><span class="choice-content"><span>A website redesign</span><span class="check" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" focusable="false"><path d="m4 10 4 4 8-8"/></svg></span></span></label>
 <label class="choice"><input type="radio" name="service" value="Website updates or support" required><span class="choice-content"><span>Website updates or support</span><span class="check" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" focusable="false"><path d="m4 10 4 4 8-8"/></svg></span></span></label>
-<label class="choice"><input type="radio" name="service" value="I’m not sure yet" required><span class="choice-content"><span>I’m not sure yet</span><span class="check" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" focusable="false"><path d="m4 10 4 4 8-8"/></svg></span></span></label>
+<label class="choice"><input type="radio" name="service" value="I have something else in mind" required><span class="choice-content"><span>I have something else in mind</span><span class="check" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" focusable="false"><path d="m4 10 4 4 8-8"/></svg></span></span></label>
 </div></fieldset>
 <fieldset><legend><span class="step" aria-hidden="true">2</span>A little about you</legend><div class="fields">
-<div><label class="field-label" for="name">Your name</label><input class="text-input" id="name" name="name" autocomplete="name" maxlength="120" required></div>
+<div><label class="field-label" for="name">Your name</label><input aria-describedby="name-error" class="text-input" id="name" name="name" autocomplete="name" maxlength="120" required><p class="field-error" id="name-error" aria-live="polite"></p></div>
 <div><label class="field-label" for="email">Email address</label><input class="text-input" id="email" name="email" type="email" autocomplete="email" maxlength="254" required></div>
 <div><label class="field-label" for="business">Business name <span class="optional">(optional)</span></label><input class="text-input" id="business" name="business" autocomplete="organization" maxlength="160"></div>
 <div><label class="field-label" for="website">Current website <span class="optional">(optional)</span></label><input class="text-input" id="website" name="website" type="text" inputmode="url" placeholder="yourbusiness.com" maxlength="300"></div>
 </div></fieldset>
 <fieldset><legend><span class="step" aria-hidden="true">3</span>What do you have in mind?</legend><div class="fields">
-<div class="full"><label class="field-label" for="brief">Your project</label><p class="helper" id="brief-help">What does your business do, and what should your website help you achieve?</p><textarea id="brief" name="brief" aria-describedby="brief-help" maxlength="1800" required></textarea></div>
+<div class="full other-service" id="other-service-field" hidden><label class="field-label" for="other-service">What else did you have in mind?</label><p class="helper" id="other-help">Tell us what you need, even if it isn’t a website.</p><textarea id="other-service" name="otherService" aria-describedby="other-help other-error" maxlength="800" disabled></textarea><p class="field-error" id="other-error" aria-live="polite"></p></div>
+<div class="full"><label class="field-label" for="brief">Your project</label><p class="helper" id="brief-help">What does your business do, and what should your website help you achieve?</p><textarea id="brief" name="brief" aria-describedby="brief-help brief-error" maxlength="1800" required></textarea><p class="field-error" id="brief-error" aria-live="polite"></p></div>
 <div class="full timeline-field"><label class="field-label" for="timeline-range">When would you like to launch?</label>
 <div class="timeline-heading"><output id="timeline-label" for="timeline-range">In 1 month</output><span id="timeline-date"></span></div>
 <input id="timeline-range" class="timeline-range" type="range" min="0" max="5" step="1" value="3" aria-describedby="timeline-description timeline-note" aria-valuetext="In 1 month">
@@ -50,53 +55,5 @@
 </form></section>
 </main><footer><span>© DEXITE.DEV 2026</span><span>LESS FRICTION. MORE CONNECTION.</span></footer>
 </div>
-<script>
-const timelineOptions = [
- {label:'In 1 week',days:7,description:'A tight launch window. Let’s discuss a focused scope and what’s ready to go.'},
- {label:'In 2 weeks',days:14,description:'A quick turnaround. Having your content and project priorities ready will help.'},
- {label:'In 3 weeks',days:21,description:'A little more room to design, build, and review a focused website.'},
- {label:'In 1 month',months:1,description:'Time to shape the design, build the website, and refine the details.'},
- {label:'In 2 months',months:2,description:'More room for planning, content preparation, and a considered design process.'},
- {label:'In 3 months',months:3,description:'An early start for a larger project, a brand refresh, or a more involved build.'}
-];
-const timelineRange = document.getElementById('timeline-range');
-const timelineStart = new Date();
-function getLaunchDate(start, option) {
- const date = new Date(start.getTime());
- if (option.days) date.setDate(date.getDate() + option.days);
- else {
-  const day = date.getDate();
-  date.setDate(1);
-  date.setMonth(date.getMonth() + option.months);
-  const lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
-  date.setDate(Math.min(day, lastDay));
- }
- return date;
-}
-function updateTimeline() {
- const index = Number(timelineRange.value);
- const option = timelineOptions[index];
- const date = getLaunchDate(timelineStart, option).toLocaleDateString('en', {month:'short',day:'numeric',year:'numeric'});
- document.getElementById('timeline-label').textContent = option.label;
- document.getElementById('timeline-date').textContent = 'Around ' + date;
- document.getElementById('timeline-description').textContent = option.description;
- document.getElementById('timeline').value = option.label + ' (around ' + date + ')';
- timelineRange.setAttribute('aria-valuetext', option.label + ', around ' + date);
- timelineRange.style.setProperty('--range-fill', (index / (timelineOptions.length - 1) * 100) + '%');
-}
-timelineRange.addEventListener('input', updateTimeline);
-updateTimeline();
-
-
-document.getElementById('inquiry-form').addEventListener('submit',function(event){
-event.preventDefault();
-if(!this.reportValidity())return;
-const values=new FormData(this);
-const get=key=>String(values.get(key)||'').trim();
-const subject='Website inquiry — '+(get('business')||get('name')).replace(/[\r\n]/g,' ');
-const body=['Hi Dexite,','', 'Name: '+get('name'),'Email: '+get('email'),'Business: '+(get('business')||'Not provided'),'Current website: '+(get('website')||'None provided'),'Looking for: '+get('service'),'Timeline: '+(get('timeline')||'Not specified'),'','Project details:',get('brief')].join('\r\n');
-window.location.href='mailto:dex@dexite.dev?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
-document.getElementById('status').textContent='Your email app should open with your draft. Your inquiry reaches us after you press send. If it didn’t open, use the email link below.';
-});
-</script>
+<script src="/inquiry/inquiry.js" defer></script>
 </body></html>
